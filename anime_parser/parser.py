@@ -37,7 +37,7 @@ def parser_ing():
     html = get_html(URL)
     if html.status_code == 200:
         answer = []
-        for page in range(1, 5):
+        for page in range(1, 3):
             html = get_html(f"{URL}page/{page}/")
             answer.extend(get_data(html.text))
         return answer

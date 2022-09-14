@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anime</title>
+</head>
+<body>
+    <div>
+        {% for anime in object_list %}
+            <h4>Ссылка: <a href="{{ anime.link }}">link</a></h4>
+            <h4>Название: {{ anime.title }}</h4>
+            <h4>Год выпуска: {{ anime.year }}</h4>
+            <h4>Страна: {{ anime.city }}</h4>
+            <h4>Жанр: {{ anime.ganre }}</h4></br></br>
+        {% endfor %}
+    </div>
+</body>
+</html>

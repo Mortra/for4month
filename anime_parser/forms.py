@@ -1,9 +1,11 @@
 from django import forms
 from . import models,parser
+from .models import Anime
+
 
 class ParserForm(forms.Form):
     MEDIA_CHOICE = (
-        ("Anime","Anime"),
+        ("Anime", "Anime"),
     )
     media_type = forms.ChoiceField(choices=MEDIA_CHOICE)
 
@@ -17,3 +19,9 @@ class ParserForm(forms.Form):
             animes_parser = parser.parser_ing()
             for data in animes_parser:
                 models.Anime.objects.create(**data)
+
+
+class AnimeForm(forms.ModelForm):
+    class Meta:
+        model = Anime
+        fields = ['link', 'title', 'year', 'city', 'ganre']
